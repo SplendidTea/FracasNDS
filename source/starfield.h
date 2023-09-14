@@ -96,35 +96,3 @@ void EraseStar(Star* star)
 {
 	glBoxFilled(star->x,star->y,star->x+1,star->y+1,RGB15(0,0,0));
 }
-/* 
-int startStars(void) 
-{
-	int i;
- 
-	irqInit();
-	irqEnable(IRQ_VBLANK);
- 
-	videoSetMode(MODE_FB0);
-	vramSetBankA(VRAM_A_LCD);
- 
-    ClearScreen();
-	InitStars();
- 
-	while(1)
-	{
-		scanKeys();
-		if(keysDown())
-			lastKey = keysHeld();
- 
-		swiWaitForVBlank();
- 
-		for(i = 0; i < NUM_STARS; i++)
-		{
-			EraseStar(&stars[i]);
-			MoveStar(&stars[i]);
-			DrawStar(&stars[i]);
-		}
-	}
-	return 0;
-}
-*/
